@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet the Chefs || RecipeFeed</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <!-- normalize -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!-- nav  -->
+    <nav class="navbar">
+      <div class="nav-center">
+        <div class="nav-header">
+          <a href="index.html" class="nav-logo">
+            <img src="./assets/logo.svg" alt="Recipe Feed" />
+          </a>
+          <button class="nav-btn btn">
+            <i class="fas fa-align-justify"></i>
+          </button>
+        </div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link"> home </a>
+          <a href="about.html" class="nav-link"> about </a>
+          <a href="tags.html" class="nav-link"> tags </a>
+          <a href="recipes.html" class="nav-link"> recipes </a>
+          <a href="chefs.html" class="nav-link">Explore More Chefs</a>
+
+          <div class="nav-link contact-link">
+            <a href="contact.html" class="btn"> contact </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- end of nav -->
+
+    <!-- Main content: Chefs Page -->
+    <main class="page chefs-page">
+      <section class="intro">
+        <h1>Meet the Chefs Behind Recipe Feed</h1>
+        <p>
+          At Recipe Feed, we believe in bringing you delicious recipes crafted with passion. Our team of chefs has a unique approach to cooking, blending creativity with tradition to offer you the best recipes.
+        </p>
+      </section>
+
+      <!-- Call to Action (CTA) Buttons - Add this at the top -->
+      <section class="cta-chefs">
+        <p>Want to explore more delicious recipes or meet other talented chefs?</p>
+        <div class="cta-buttons">
+          <a href="recipes.html" class="btn">Browse Recipes</a>
+          <a href="chefs.html" class="btn">Explore More Chefs</a>
+        </div>
+      </section>
+
+      <!-- Chef Profiles -->
+      <section class="chefs">
+        <!-- Chef 1 -->
+        <div class="chef">
+          <img src="./assets/chef1.jpg" alt="Chef Alan" class="chef-photo" />
+          <h3>Alan</h3>
+          <p>
+            Alan is a passionate chef with a love for creating comfort food. She specializes in simple yet flavorful dishes that bring joy to every meal. With years of experience in both home kitchens and professional settings, Rafaela brings a personal touch to every recipe she shares.
+          </p>
+        </div>
+
+        <!-- Chef 2 -->
+        <div class="chef">
+          <img src="./assets/chef2.jpg" alt="Chef Anna" class="chef-photo" />
+          <h3>Anna</h3>
+          <p>
+            Anna is known for his innovative takes on classic recipes, using fresh, locally sourced ingredients. A lover of healthy cooking, Livan is always looking for ways to make nutritious meals that still taste amazing.
+          </p>
+        </div>
+
+        <!-- Chef 3 -->
+        <div class="chef">
+          <img src="./assets/chef3.jpg" alt="Chef Luis" class="chef-photo" />
+          <h3>Luis</h3>
+          <p>
+            Luis brings a global perspective to the kitchen, drawing inspiration from a variety of cuisines around the world. His love for experimenting with bold flavors and textures results in unique and exciting dishes.
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA section for exploring more recipes or chefs -->
+      <section class="cta">
+        <p>Want to know more or try our recipes? Explore the links below:</p>
+        <div class="cta-buttons">
+          <a href="recipes.html" class="btn">Browse Recipes</a>
+          <a href="contact.html" class="btn">Get in Touch</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="page-footer">
+      <p>
+        &copy; <span id="date"></span>
+        <span class="footer-logo">RecipeFeed</span> Built by
+        <a href="https://www.linkedin.com">Rafaela, Livan, and Jasmeet</a>
+      </p>
+    </footer>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
