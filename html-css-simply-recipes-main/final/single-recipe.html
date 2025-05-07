@@ -158,5 +158,23 @@
       fetchRecipe();  // Fetch the recipe when the page loads
     </script>
     <script src="./js/single-recipe.js"></script>
-  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navBtn = document.querySelector('.nav-btn');
+      const navLinks = document.querySelector('.nav-links');
+  
+      if (navBtn && navLinks) {
+        navBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('show-links');
+        });
+      }
+  
+      // Set footer year
+      const dateSpan = document.getElementById('date');
+      if (dateSpan) {
+        dateSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
 </html>
