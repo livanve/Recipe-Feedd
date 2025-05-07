@@ -3,12 +3,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const authRoutes = require('./routes/auth'); // Import the auth routes (registration & login)
+const authRoutes = require('./routes/auth'); // Import the authentication routes
+const authMiddleware = require('./middleware/auth'); // Import the authMiddleware
+
 const app = express();
 
 // Middleware
-app.use(bodyParser.json());
-app.use(express.static(__dirname + '/html-css-simply-recipes-main/final')); // Serves static files like HTML, CSS, JS
+app.use(bodyParser.json()); // Parse JSON bodies
+app.use(express.static(__dirname + '/html-css-simply-recipes-main/final')); // Serve static files like HTML, CSS, JS
 app.use(cors()); // Enable CORS
 
 // MongoDB connection
@@ -24,7 +26,7 @@ mongoose.connect(uri)
   .catch(err => console.log('Error connecting to MongoDB:', err));
 
 // Use the authentication routes
-app.use('/api/auth', authRoutes); // Add this line to use the authentication routes
+app.use('/api/auth', authRoutes); // Make sure this is correctly linking the auth.js routes
 
 // Define a Recipe model
 const Recipe = mongoose.model('Recipe', {
@@ -44,12 +46,19 @@ app.get('/api/recipes', async (req, res) => {
   }
 });
 
-// Route to add a new recipe
-app.post('/api/recipes', async (req, res) => {
+// **Corrected** Route to add a new recipe with authentication
+app.post('/api/recipes', authMiddleware, async (req, res) => {
   try {
     const newRecipe = new Recipe(req.body);
+
+    // Save the new recipe to the database
     await newRecipe.save();
-    res.status(201).send('Recipe added');
+
+    // Respond with the saved recipe or a success message
+    res.status(201).json({
+      msg: 'Recipe added successfully',
+      recipe: newRecipe,  // You can send the created recipe back as part of the response
+    });
   } catch (err) {
     res.status(500).send('Error adding recipe');
   }

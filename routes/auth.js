@@ -49,7 +49,7 @@ router.post(
           id: newUser.id,
         },
       };
-      const token = jwt.sign(payload, 'your_jwt_secret', { expiresIn: '1h' });
+      const token = jwt.sign(payload, 'mysecretkey', { expiresIn: '1h' });
 
       // Send the token to the client
       res.status(201).json({ token });
@@ -94,7 +94,7 @@ router.post(
           id: user.id,
         },
       };
-      const token = jwt.sign(payload, 'your_jwt_secret', { expiresIn: '1h' });
+      const token = jwt.sign(payload, 'mysecretkey', { expiresIn: '1h' });
 
       // Send the token to the client
       res.json({ token });
