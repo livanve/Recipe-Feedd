@@ -5,34 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login / SignUp || RecipeFeed</title>
-    <!-- Add your CSS links here -->
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body>
-
-    <nav class="navbar">
-        <div class="nav-center">
-          <div class="nav-header">
-            <a href="index.html" class="nav-logo">
-              <img src="./assets/logo.svg" alt="Recipe Feed" />
-            </a>
-            <button class="nav-btn btn">
-              <i class="fas fa-align-justify"></i>
-            </button>
-          </div>
-          <div class="nav-links">
-            <a href="index.html" class="nav-link"> Home </a>
-            <a href="about.html" class="nav-link"> About </a>
-            <a href="tags.html" class="nav-link"> Tags </a>
-            <a href="recipes.html" class="nav-link"> Recipes </a>
-            <a href="chefs.html" class="nav-link"> Explore More Chefs </a>
-    
-            <div class="nav-link contact-link">
-              <a href="contact.html" class="btn"> Contact </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
+  <body> <!-- No navbar-page class here -->
+    <!-- Auth Form Container -->
     <div class="auth-container">
       <!-- Login Form -->
       <div id="login-form" class="auth-form">
@@ -45,8 +24,8 @@
         <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign up here</a></p>
       </div>
 
-      <!-- SignUp Form -->
-      <div id="signup-form" class="auth-form" style="display: none;">
+      <!-- Sign-up Form (hidden initially) -->
+      <div id="signup-form" class="auth-form" style="display:none;">
         <h2>Sign Up</h2>
         <form id="signupForm">
           <input type="text" id="signupUsername" placeholder="Username" required />
@@ -88,12 +67,14 @@
         });
 
         const data = await response.json();
+        console.log('Login Response:', data); // Debugging line
+
         if (response.ok) {
           localStorage.setItem('token', data.token);  // Store the token in local storage
           alert('Login is successful');
-          // Redirect to the home page or recipes page
+          window.location.href = '/recipes.html';  // Redirect to recipes page
         } else {
-          alert(data.msg);  // Show error message from the server
+          alert(data.msg);  // Show error message from the backend
         }
       });
 
@@ -113,6 +94,8 @@
         });
 
         const data = await response.json();
+        console.log('Sign-up Response:', data); // Debugging line
+
         if (response.ok) {
           alert('Sign up successful');
           toggleForm();  // Show login form after successful signup
@@ -121,6 +104,7 @@
         }
       });
     </script>
+
     <script src="./js/app.js"></script>
   </body>
 </html>

@@ -5,20 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Single Recipe || Final</title>
-    <!-- favicon -->
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
-    <!-- normalize -->
     <link rel="stylesheet" href="./css/normalize.css" />
-    <!-- font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
-    <!-- main css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <!-- nav  -->
     <nav class="navbar">
       <div class="nav-center">
         <div class="nav-header">
@@ -35,143 +27,136 @@
           <a href="tags.html" class="nav-link"> tags </a>
           <a href="recipes.html" class="nav-link"> recipes </a>
           <a href="chefs.html" class="nav-link">Explore More Chefs</a>
-
-
+          <div class="nav-link contact-link">
+            <a href="new-recipe.html" class="btn">New Recipe</a> <!-- New Recipe button -->
+          </div>
           <div class="nav-link contact-link">
             <a href="contact.html" class="btn"> contact </a>
           </div>
         </div>
       </div>
     </nav>
-    <!-- end of nav -->
+    
     <main class="page">
       <div class="recipe-page">
         <section class="recipe-hero">
-          <img
-            src="./assets/recipes/recipe-4.jpeg"
-            class="img recipe-hero-img"
-          />
+          <img id="recipe-image" class="img recipe-hero-img" />
           <article class="recipe-info">
-            <h2>Banana Pancakes</h2>
-            <p>
-              Fluffy, golden pancakes infused with the natural sweetness of ripe bananas. Each bite is soft and moist, with a delicate balance of banana flavor and a light, airy texture. Topped with extra slices of fresh banana, a drizzle of maple syrup, and a dusting of powdered sugar, these pancakes are the perfect way to start your morning. The combination of warm pancakes and sweet banana makes for a comforting and indulgent breakfast treat. Serve with a dollop of whipped cream or a sprinkle of cinnamon for an extra touch of decadence. Ideal for lazy weekends or when you’re craving a delicious, easy-to-make brunch option.
-            </p>
+            <h2 id="recipe-name">Loading...</h2>
+            <p id="recipe-description">Please wait...</p>
             <div class="recipe-icons">
               <article>
                 <i class="fas fa-clock"></i>
                 <h5>prep time</h5>
-                <p>30 min.</p>
+                <p id="prep-time">Loading...</p>
               </article>
               <article>
                 <i class="far fa-clock"></i>
                 <h5>cook time</h5>
-                <p>15 min.</p>
+                <p id="cook-time">Loading...</p>
               </article>
               <article>
                 <i class="fas fa-user-friends"></i>
                 <h5>serving</h5>
-                <p>6 servings</p>
+                <p id="serving-size">Loading...</p>
               </article>
             </div>
-            <p class="recipe-tags">
-              Tags : <a href="tag-template.html">beef</a>
-              <a href="tag-template.html">breakfast</a>
-              <a href="tag-template.html">pancakes</a>
-              <a href="tag-template.html">food</a>
-            </p>
+            <p class="recipe-tags" id="recipe-tags">Tags: Loading...</p>
           </article>
         </section>
-        <!-- content -->
+        
         <section class="recipe-content">
           <article>
             <h4>instructions</h4>
-            <!-- single instruction -->
-            <div class="single-instruction">
-              <header>
-                <p>Step 1: Prepare the Bananas</p>
-                <div></div>
-              </header>
-              <p>
-                Mash the ripe bananas in a bowl until smooth. Set aside. This will provide the natural sweetness and moisture to the pancakes.
-              </p>
-            </div>
-            <!-- end of single instruction -->
-
-            <!-- single instruction -->
-            <div class="single-instruction">
-              <header>
-                <p>Step 2: Mix the Wet Ingredients</p>
-                <div></div>
-              </header>
-              <p>
-                In a separate bowl, whisk together eggs, milk, vanilla extract, and the mashed bananas until well combined.
-              </p>
-            </div>
-            <!-- end of single instruction -->
-
-            <!-- single instruction -->
-            <div class="single-instruction">
-              <header>
-                <p>Step 3: Prepare the Dry Ingredients and Combine</p>
-                <div></div>
-              </header>
-              <p>
-                In another bowl, mix flour, baking powder, and a pinch of salt. Slowly add the dry ingredients to the wet mixture and stir until just combined. Be careful not to overmix.
-              </p>
-            </div>
-            <!-- end of single instruction -->
-
-            <!-- single instruction -->
-            <div class="single-instruction">
-              <header>
-                <p>Step 4: Cook the Pancakes</p>
-                <div></div>
-              </header>
-              <p>
-                Heat a non-stick pan or griddle over medium heat. Pour a scoop of batter onto the pan for each pancake. Cook for 2-3 minutes on each side, or until golden brown.
-              </p>
-            </div>
-            <!-- end of single instruction -->
-
-            <!-- single instruction -->
-            <div class="single-instruction">
-              <header>
-                <p>Step 5: Serve and Enjoy!</p>
-                <div></div>
-              </header>
-              <p>
-                Serve the pancakes warm with sliced bananas, maple syrup, and a dusting of powdered sugar for a perfect breakfast treat.
-              </p>
-            </div>
-            <!-- end of single instruction -->
-
+            <div id="recipe-instructions"></div>  <!-- Instructions will be inserted here -->
           </article>
           <article class="second-column">
-            <div>
+            <div id="recipe-ingredients">
               <h4>ingredients</h4>
-              <p class="single-ingredient">1 1/2 cups dry pancake mix</p>
-              <p class="single-ingredient">1/2 cup flax seed meal</p>
-              <p class="single-ingredient">1 cup skim milk</p>
             </div>
-            <div>
+            <div id="recipe-tools">
               <h4>tools</h4>
-              <p class="single-tool">Hand Blender</p>
-              <p class="single-tool">Large Heavy Pot With Lid</p>
-              <p class="single-tool">Measuring Spoons</p>
-              <p class="single-tool">Measuring Cups</p>
             </div>
           </article>
         </section>
       </div>
     </main>
-    <!-- footer -->
+    
     <footer class="page-footer">
       <p>
         &copy; <span id="date"></span>
         <span class="footer-logo">RecipeFeed</span> Built by
-        <a>Rafaela, Livan, and Jasmeet</a>
+        <a href="https://www.linkedin.com">Rafaela, Livan, and Jasmeet</a>
       </p>
+      <div class="footer-content">
+        <a href="login.html" class="btn footer-login-btn">Login</a>
+      </div>
     </footer>
-    <script src="./js/app.js"></script>
+    
+    <script>
+      // Get recipe ID from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const recipeId = urlParams.get('id');  // This gets the 'id' query parameter
+
+      // Fetch recipe details by ID
+      async function fetchRecipe() {
+        const id = new URLSearchParams(window.location.search).get("id");
+
+        try {
+          const response = await fetch(`http://localhost:5000/api/recipes/${id}`);
+
+          if (!response.ok) {
+            const errorMsg = await response.text();
+            console.error("Error loading recipe:", errorMsg);
+            alert("Recipe not found or failed to load.");
+            return;
+          }
+
+          const recipe = await response.json();
+
+          // Basic rendering
+          document.getElementById('recipe-name').textContent = recipe.name ?? 'No Name';
+          document.getElementById('recipe-image').src = recipe.image ?? './assets/default.jpg';
+
+          // Ingredients
+          if (Array.isArray(recipe.ingredients)) {
+            document.getElementById('recipe-ingredients').innerHTML = recipe.ingredients.map(i => `<p>${i}</p>`).join('');
+          } else {
+            document.getElementById('recipe-ingredients').innerHTML = '<p>No ingredients listed.</p>';
+          }
+
+          // Instructions
+          if (typeof recipe.instructions === 'string') {
+            document.getElementById('recipe-instructions').innerHTML = `<p>${recipe.instructions}</p>`;
+          } else if (Array.isArray(recipe.instructions)) {
+            document.getElementById('recipe-instructions').innerHTML = recipe.instructions.map((step, i) => `
+              <div class="single-instruction">
+                <header><p>Step ${i + 1}</p><div></div></header>
+                <p>${step}</p>
+              </div>
+            `).join('');
+          } else {
+            document.getElementById('recipe-instructions').innerHTML = '<p>No instructions provided.</p>';
+          }
+
+          // Tags (optional)
+          if (Array.isArray(recipe.tags)) {
+            document.getElementById('recipe-tags').textContent = `Tags: ${recipe.tags.join(', ')}`;
+          }
+
+          // Tools (optional)
+          if (Array.isArray(recipe.tools)) {
+            document.getElementById('recipe-tools').innerHTML = recipe.tools.map(tool => `<p class="single-tool">${tool}</p>`).join('');
+          }
+
+        } catch (err) {
+          console.error("Error fetching recipe:", err);
+        }
+      }
+
+
+      fetchRecipe();  // Fetch the recipe when the page loads
+    </script>
+    <script src="./js/single-recipe.js"></script>
   </body>
 </html>

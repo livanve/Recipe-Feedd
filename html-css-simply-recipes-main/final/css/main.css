@@ -854,3 +854,108 @@ Chefs Page
     grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
   }
 }
+
+
+/* Styles for the Login and Signup Forms */
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 3rem auto;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+  text-align: center;
+}
+
+.auth-form h2 {
+  font-size: 2rem;
+  color: var(--primary-500);
+  margin-bottom: 1.5rem;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--grey-300);
+  border-radius: var(--borderRadius);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-500);
+  border: none;
+  border-radius: var(--borderRadius);
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-form button:hover {
+  background-color: var(--primary-700);
+}
+
+.auth-form p {
+  font-size: 0.9rem;
+  color: var(--grey-600);
+  margin-top: 1rem;
+}
+
+.auth-form p a {
+  text-decoration: none;
+  color: var(--primary-500);
+}
+
+.auth-form p a:hover {
+  color: var(--primary-700);
+}
+
+.auth-form .auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.auth-form .auth-container p {
+  margin-top: 1rem;
+}
+
+
+/* Footer container for login button */
+.page-footer {
+  display: flex;               /* Use flexbox for the footer */
+  justify-content: space-between; /* Space between items */
+  align-items: center;         /* Vertically center items */
+  padding: 1rem;               /* Add some padding to the footer */
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: flex-end;    /* Align items to the right */
+  width: 100%;                  /* Ensure the container takes the full width */
+}
+
+/* Style for the login button */
+.footer-login-btn {
+  background-color: var(--primary-500);  /* Purple background */
+  color: var(--black) !important;         /* Force black text color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition for smooth color change */
+}
+
+/* Hover effect for the button */
+.footer-login-btn:hover {
+  background-color: var(--primary-700); /* Darker purple on hover */
+  color: var(--white) !important;        /* White text color on hover */
+}

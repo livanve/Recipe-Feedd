@@ -36,15 +36,42 @@ const Recipe = mongoose.model('Recipe', {
   image: String,
 });
 
-// Route to get all recipes
+// ✅ GET all recipes
 app.get('/api/recipes', async (req, res) => {
   try {
     const recipes = await Recipe.find();
     res.json(recipes);
   } catch (err) {
-    res.status(500).send('Error retrieving recipes');
+    res.status(500).json({ msg: 'Error retrieving recipes' });
   }
 });
+
+
+// Get a single recipe by ID
+app.get('/api/recipes/:id', async (req, res) => {
+  const { id } = req.params;
+
+  // Step 1: Validate the format of the ID
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ msg: 'Invalid recipe ID format' });
+  }
+
+  try {
+    // Step 2: Fetch recipe from database
+    const recipe = await Recipe.findById(id);
+
+    if (!recipe) {
+      return res.status(404).json({ msg: 'Recipe not found' });
+    }
+
+    // Step 3: Send recipe as response
+    res.json(recipe);
+  } catch (err) {
+    console.error('Server error while fetching recipe:', err);
+    res.status(500).json({ msg: 'Server error' });
+  }
+});
+
 
 // **Corrected** Route to add a new recipe with authentication
 app.post('/api/recipes', authMiddleware, async (req, res) => {
@@ -68,4 +95,16 @@ app.post('/api/recipes', authMiddleware, async (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+});
+
+app.delete('/api/recipes/:id', authMiddleware, async (req, res) => {
+  try {
+    const recipe = await Recipe.findByIdAndDelete(req.params.id);
+    if (!recipe) {
+      return res.status(404).json({ msg: 'Recipe not found' });
+    }
+    res.json({ msg: 'Recipe deleted' });
+  } catch (err) {
+    res.status(500).json({ msg: 'Server error' });
+  }
 });
